@@ -69,11 +69,44 @@ void loop() {
    }
 
    // Add motor control functions here (goForward, goBackward, etc.)
-
    // Example: goForward(); // Uncomment to test forward motion
 }
 
 // Define your motor control functions (stopCar, goForward, etc.) here
+void stopCar() {
+  motorFrontLeft.run(RELEASE);
+  motorFrontRight.run(RELEASE);
+  motorBackLeft.run(RELEASE);
+  motorBackRight.run(RELEASE);
+}
+
+void goForward() {
+  motorFrontLeft.run(FORWARD);
+  motorFrontRight.run(FORWARD);
+  motorBackLeft.run(FORWARD);
+  motorBackRight.run(FORWARD);
+}
+
+void goBackward() {
+  motorFrontLeft.run(BACKWARD);
+  motorFrontRight.run(BACKWARD);
+  motorBackLeft.run(BACKWARD);
+  motorBackRight.run(BACKWARD);
+}
+
+void goLeft() {
+  motorFrontLeft.run(BACKWARD);
+  motorFrontRight.run(FORWARD);
+  motorBackLeft.run(BACKWARD);
+  motorBackRight.run(FORWARD);
+}
+
+void goRight() {
+  motorFrontLeft.run(FORWARD);
+  motorFrontRight.run(BACKWARD);
+  motorBackLeft.run(FORWARD);
+  motorBackRight.run(BACKWARD);
+}
 
 int getDistance() {
   digitalWrite(trigPin, HIGH);
